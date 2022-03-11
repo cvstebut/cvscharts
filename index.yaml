@@ -1,0 +1,14 @@
+apiVersion: v1
+entries:
+  my-app:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2022-03-11T05:56:41.025938802Z"
+    description: A Helm chart for Kubernetes
+    digest: 617f8325933511f1e8eed17d86ff45e84e98b521f571f0071b1a4dfb634a4012
+    name: my-app
+    type: application
+    urls:
+    - https://github.com/cvstebut/cvscharts/releases/download/my-app-0.1.0/my-app-0.1.0.tgz
+    version: 0.1.0
+generated: "2022-03-11T05:56:40.774235516Z"
