@@ -1,5 +1,16 @@
 apiVersion: v1
 entries:
+  argocd-config-base:
+  - apiVersion: v2
+    appVersion: 0.1.0
+    created: "2022-03-11T10:03:45.412430785Z"
+    description: Basic argocd configuration (repo-creds, project)
+    digest: 7bdeb2c173ae9158eb283c1736b8248dbd11c23ef9d51f430e2ab06e3510cbef
+    name: argocd-config-base
+    type: application
+    urls:
+    - https://github.com/cvstebut/cvscharts/releases/download/argocd-config-base-0.1.0/argocd-config-base-0.1.0.tgz
+    version: 0.1.0
   my-app:
   - apiVersion: v2
     appVersion: 1.16.0
@@ -11,4 +22,4 @@ entries:
     urls:
     - https://github.com/cvstebut/cvscharts/releases/download/my-app-0.1.0/my-app-0.1.0.tgz
     version: 0.1.0
-generated: "2022-03-11T05:56:40.774235516Z"
+generated: "2022-03-11T10:03:45.412434685Z"
