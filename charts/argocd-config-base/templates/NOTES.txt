@@ -1,0 +1,3 @@
+The following argocd configuration has been added to the cluster:
+- project "infra" (full access to cluster, used for infrastructure applications)
+- repo_creds for namolabs github organization

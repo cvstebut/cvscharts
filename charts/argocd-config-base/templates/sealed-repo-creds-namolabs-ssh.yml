@@ -1,0 +1,18 @@
+apiVersion: bitnami.com/v1alpha1
+kind: SealedSecret
+metadata:
+  creationTimestamp: null
+  name: repo-creds-namolabs-ssh
+  namespace: argocd
+spec:
+  encryptedData:
+    sshPrivateKey: {{ required "required value is missing: A sealed string of the repo private key sealed with the sealed-secrets cluster certificate." .Values.encryptedData.sshPrivateKey }}
+    url: {{ required "required value is missing: A sealed string of the repo url sealed with the sealed-secrets cluster certificate." .Values.encryptedData.url }}
+  template:
+    data: null
+    metadata:
+      creationTimestamp: null
+      labels:
+        argocd.argoproj.io/secret-type: repo-creds
+      name: repo-creds-namolabs-ssh
+      namespace: argocd
