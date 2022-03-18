@@ -11,6 +11,18 @@ entries:
     urls:
     - https://github.com/cvstebut/cvscharts/releases/download/argocd-config-base-0.1.0/argocd-config-base-0.1.0.tgz
     version: 0.1.0
+  cert-manager-config:
+  - apiVersion: v2
+    appVersion: 0.2.0
+    created: "2022-03-18T09:23:02.16802925Z"
+    description: Create cert-manager configuration (ca-issuer-local, wildcard cluster
+      certificate)
+    digest: 8215c26642987d23231754d125001142d0dd6e6cd2f4dd3c06106f02f9f4f4dd
+    name: cert-manager-config
+    type: application
+    urls:
+    - https://github.com/cvstebut/cvscharts/releases/download/cert-manager-config-0.2.0/cert-manager-config-0.2.0.tgz
+    version: 0.2.0
   my-app:
   - apiVersion: v2
     appVersion: 1.16.0
@@ -22,4 +34,4 @@ entries:
     urls:
     - https://github.com/cvstebut/cvscharts/releases/download/my-app-0.1.0/my-app-0.1.0.tgz
     version: 0.1.0
-generated: "2022-03-11T10:03:45.412434685Z"
+generated: "2022-03-18T09:23:02.16803675Z"
