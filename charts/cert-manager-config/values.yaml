@@ -1,0 +1,21 @@
+# Default values for cert-manager-config.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+clusterissuer:
+  name: ca-issuer-local
+  secretName: ica-2022-key-pair
+
+
+# certificates:
+#   - name: k7-stable-ingress-certificate
+#     namespace: default
+#     commonname: '*.k7.infra.namolabs.de'
+#   - name: k8-stable-ingress-certificate
+#     commonname: '*.k7.infra.namolabs.de'
+#   - name: k9-stable-ingress-certificate
+#     commonname: '*.k9.infra.namolabs.de'
+#     namespace: argocd
+
+
+certificates: []
+

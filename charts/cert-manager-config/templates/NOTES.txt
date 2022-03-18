@@ -1,0 +1,11 @@
+The chart deployed the following cert-manager resources:
+
+- ClusterIssuer {{ .Values.clusterissuer.name }},
+  based on key pair in secret {{ .Values.clusterissuer.secretName }}
+
+- Wildcard cluster certificate
+{{- range .Values.certificates }}
+    name: {{ .name }}
+    namespace: {{ .namespace | default "istio-ingress" }}
+    commonname: {{ .commonname }}
+{{- end }}
