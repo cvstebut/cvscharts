@@ -1,0 +1,30 @@
+# Default values for app-config-ingress.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+virtualservices: []
+  # - name: jaeger
+  #   namespace: istio-system
+  #   host_fqdn: jaeger.k7.infra.namolabs.de
+  #   destination_fqsn: jaeger-istio-query.istio-system.svc.cluster.local
+  #   port: 16686
+  # - name: kiali
+  #   namespace: istio-system
+  #   host_fqdn: kiali.k7.infra.namolabs.de
+  #   destination_fqsn: kiali.istio-system.svc.cluster.local
+  #   port: 20001
+  # - name: grafana
+  #   namespace: monitoring
+  #   host_fqdn: grafana.k7.infra.namolabs.de
+  #   destination_fqsn: kube-prometheus-stack-grafana.monitoring.svc.cluster.local
+  #   port: 80
+  # - name: alertmanager
+  #   namespace: monitoring
+  #   host_fqdn: alertmanager.k7.infra.namolabs.de
+  #   destination_fqsn: kube-prometheus-stack-alertmanager.monitoring.svc.cluster.local
+  #   port: 9093
+  # - name: prometheus
+  #   namespace: monitoring
+  #   host_fqdn: prometheus.k7.infra.namolabs.de
+  #   destination_fqsn: kube-prometheus-stack-prometheus.monitoring.svc.cluster.local
+  #   port: 9090

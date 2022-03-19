@@ -1,0 +1,19 @@
+{{- range .Values.virtualservices }}
+---
+apiVersion: networking.istio.io/v1beta1
+kind: VirtualService
+metadata:
+  name: {{ .name }}
+  namespace: {{ .namespace | default "istio-ingress" }}
+spec:
+  hosts:
+    - {{ .host_fqdn }}
+  gateways:
+    - {{ .gateway | default "istio-ingress/istio-ingress-gateway" }}
+  http:
+    - route:
+        - destination:
+            host: {{ .destination_fqsn }}
+            port:
+              number: {{ .port | default 80 }}
+{{- end}}
