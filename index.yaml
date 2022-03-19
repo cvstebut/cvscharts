@@ -1,5 +1,16 @@
 apiVersion: v1
 entries:
+  app-config-ingress:
+  - apiVersion: v2
+    appVersion: 0.1.0
+    created: "2022-03-19T18:23:09.705215443Z"
+    description: Configure app ingress (virutalservice) based on istio
+    digest: 68133b05495af2e08f8a406c59748b326f13b0bcb615d576fb174972b54ef3f9
+    name: app-config-ingress
+    type: application
+    urls:
+    - https://github.com/cvstebut/cvscharts/releases/download/app-config-ingress-0.1.0/app-config-ingress-0.1.0.tgz
+    version: 0.1.0
   argocd-config-base:
   - apiVersion: v2
     appVersion: 0.1.0
@@ -34,4 +45,4 @@ entries:
     urls:
     - https://github.com/cvstebut/cvscharts/releases/download/my-app-0.1.0/my-app-0.1.0.tgz
     version: 0.1.0
-generated: "2022-03-18T09:23:02.16803675Z"
+generated: "2022-03-19T18:23:09.705289445Z"
