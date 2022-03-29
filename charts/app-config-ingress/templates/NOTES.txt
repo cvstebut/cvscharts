@@ -1,1 +1,1 @@
-test
+Ingress configuration (virtualservice / gateway) based on istio
