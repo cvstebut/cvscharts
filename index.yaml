@@ -13,6 +13,17 @@ entries:
     version: 0.1.0
   argocd-config-base:
   - apiVersion: v2
+    appVersion: 0.2.1
+    created: "2022-03-29T15:40:53.103618937Z"
+    description: Basic argocd configuration (repo-creds, project) using sealed secret
+      key github
+    digest: 8f487f7c881d75a839d13ed97512fd966925d206dc3a29a6dae38cbc370e7e3b
+    name: argocd-config-base
+    type: application
+    urls:
+    - https://github.com/cvstebut/cvscharts/releases/download/argocd-config-base-0.2.1/argocd-config-base-0.2.1.tgz
+    version: 0.2.1
+  - apiVersion: v2
     appVersion: 0.2.0
     created: "2022-03-29T15:10:57.319452888Z"
     description: Basic argocd configuration (repo-creds, project) using sealed secret
@@ -56,4 +67,4 @@ entries:
     urls:
     - https://github.com/cvstebut/cvscharts/releases/download/my-app-0.1.0/my-app-0.1.0.tgz
     version: 0.1.0
-generated: "2022-03-29T15:10:57.319459888Z"
+generated: "2022-03-29T15:40:53.103630337Z"
