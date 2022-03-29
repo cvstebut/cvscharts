@@ -2,6 +2,16 @@ apiVersion: v1
 entries:
   app-config-ingress:
   - apiVersion: v2
+    appVersion: 0.2.0
+    created: "2022-03-29T17:19:16.619075903Z"
+    description: Configure app ingress (virutalservice / gateway) based on istio
+    digest: cde9b36be379127031da61018ed3fcab1b2b33742c30c1c64e0e3200b0038e94
+    name: app-config-ingress
+    type: application
+    urls:
+    - https://github.com/cvstebut/cvscharts/releases/download/app-config-ingress-0.2.0/app-config-ingress-0.2.0.tgz
+    version: 0.2.0
+  - apiVersion: v2
     appVersion: 0.1.0
     created: "2022-03-19T18:23:09.705215443Z"
     description: Configure app ingress (virutalservice) based on istio
@@ -67,4 +77,4 @@ entries:
     urls:
     - https://github.com/cvstebut/cvscharts/releases/download/my-app-0.1.0/my-app-0.1.0.tgz
     version: 0.1.0
-generated: "2022-03-29T15:40:53.103630337Z"
+generated: "2022-03-29T17:19:16.619089903Z"
