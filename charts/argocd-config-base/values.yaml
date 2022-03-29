@@ -2,8 +2,4 @@
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
 
-encryptedData:
-# required value: A sealed string of the repo private key sealed with the sealed-secrets cluster certificate."
-  sshPrivateKey: "REQUIRED_VALUE_IS_MISSING"
-# required value: A sealed string of the repo url sealed with the sealed-secrets cluster certificate.
-  url: "REQUIRED_VALUE_IS_MISSING"
+# no values defined
