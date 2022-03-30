@@ -77,4 +77,15 @@ entries:
     urls:
     - https://github.com/cvstebut/cvscharts/releases/download/my-app-0.1.0/my-app-0.1.0.tgz
     version: 0.1.0
-generated: "2022-03-29T17:19:16.619089903Z"
+  observability-config:
+  - apiVersion: v2
+    appVersion: 0.1.0
+    created: "2022-03-30T16:43:33.554889718Z"
+    description: Observability configuration
+    digest: 69354803ed75091f2c46c17f2d2302c8935810e4817706e6aad19f35a3ae256f
+    name: observability-config
+    type: application
+    urls:
+    - https://github.com/cvstebut/cvscharts/releases/download/observability-config-0.1.0/observability-config-0.1.0.tgz
+    version: 0.1.0
+generated: "2022-03-30T16:43:33.554904819Z"
