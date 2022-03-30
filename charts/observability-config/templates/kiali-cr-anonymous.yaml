@@ -9,9 +9,9 @@ spec:
   external_services:
     grafana:
       auth:
-        password: {{ .Values.grafana.auth.password | default "prom-operator"}}
-        username: {{ .Values.grafana.auth.username | default "admin" }}
-        type: {{ .Values.grafana.auth.type | default "basic" }}
+        password: {{ .Values.grafana.auth.password | default "prom-operator" | quote }}
+        username: {{ .Values.grafana.auth.username | default "admin" | quote }}
+        type: {{ .Values.grafana.auth.type | default "basic" | quote }}
         use_kiali_token: {{ .Values.grafana.auth.use_kiali_token | default "false" }}
       enabled: true
       url: {{ .Values.grafana.url | default "" }}
