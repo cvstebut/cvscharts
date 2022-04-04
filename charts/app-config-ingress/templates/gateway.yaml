@@ -10,6 +10,18 @@ spec:
     istio: gateway
   servers:
   - port:
+      number: 5432
+      name: tcp-pgmain
+      protocol: TCP
+    hosts:
+      - "*"
+  - port:
+      number: 5433
+      name: tcp-pgrepl
+      protocol: TCP
+    hosts:
+      - "*"
+  - port:
       number: 80
       name: http
       protocol: HTTP
