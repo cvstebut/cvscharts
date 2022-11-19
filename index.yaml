@@ -100,6 +100,16 @@ entries:
     version: 0.1.0
   observability-config:
   - apiVersion: v2
+    appVersion: 0.2.1
+    created: "2022-11-19T07:53:21.123790408Z"
+    description: Observability configuration
+    digest: 177c49a2aefccd0a2570f2edb6cdde0379ab7e9a4e271d4488d55dfa6be64d92
+    name: observability-config
+    type: application
+    urls:
+    - https://github.com/cvstebut/cvscharts/releases/download/observability-config-0.2.1/observability-config-0.2.1.tgz
+    version: 0.2.1
+  - apiVersion: v2
     appVersion: 0.2.0
     created: "2022-11-19T07:34:07.259267241Z"
     description: Observability configuration
@@ -129,4 +139,4 @@ entries:
     urls:
     - https://github.com/cvstebut/cvscharts/releases/download/observability-config-0.1.0/observability-config-0.1.0.tgz
     version: 0.1.0
-generated: "2022-11-19T07:34:07.259547642Z"
+generated: "2022-11-19T07:53:21.123910111Z"
