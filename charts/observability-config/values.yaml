@@ -7,3 +7,6 @@ grafana:
   url: "https://grafana.k8.infra.namolabs.de"
 tracing:
   url: "https://jaeger.k8.infra.namolabs.de"
+jaeger:
+  image:
+    version: 1.39.0
