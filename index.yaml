@@ -87,6 +87,39 @@ entries:
     urls:
     - https://github.com/cvstebut/cvscharts/releases/download/cert-manager-config-0.2.0/cert-manager-config-0.2.0.tgz
     version: 0.2.0
+  longhorn:
+  - apiVersion: v1
+    appVersion: v1.4.0-dev
+    created: "2022-11-21T19:44:30.259810142Z"
+    description: Longhorn is a distributed block storage system for Kubernetes.
+    digest: 86978a4c4d2a04e55c41e53f1fe056fd1a31f564d07be23598434c0b22c4d961
+    home: https://github.com/longhorn/longhorn
+    icon: https://raw.githubusercontent.com/cncf/artwork/master/projects/longhorn/icon/color/longhorn-icon-color.png
+    keywords:
+    - longhorn
+    - storage
+    - distributed
+    - block
+    - device
+    - iscsi
+    - nfs
+    kubeVersion: '>=1.21.0-0'
+    maintainers:
+    - email: maintainers@longhorn.io
+      name: Longhorn maintainers
+    name: longhorn
+    sources:
+    - https://github.com/longhorn/longhorn
+    - https://github.com/longhorn/longhorn-engine
+    - https://github.com/longhorn/longhorn-instance-manager
+    - https://github.com/longhorn/longhorn-share-manager
+    - https://github.com/longhorn/longhorn-manager
+    - https://github.com/longhorn/longhorn-ui
+    - https://github.com/longhorn/longhorn-tests
+    - https://github.com/longhorn/backing-image-manager
+    urls:
+    - https://github.com/cvstebut/cvscharts/releases/download/longhorn-1.4.0-dev/longhorn-1.4.0-dev.tgz
+    version: 1.4.0-dev
   my-app:
   - apiVersion: v2
     appVersion: 1.16.0
@@ -139,4 +172,4 @@ entries:
     urls:
     - https://github.com/cvstebut/cvscharts/releases/download/observability-config-0.1.0/observability-config-0.1.0.tgz
     version: 0.1.0
-generated: "2022-11-19T07:53:21.123910111Z"
+generated: "2022-11-21T19:44:30.259835842Z"
