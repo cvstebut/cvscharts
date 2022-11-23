@@ -88,6 +88,17 @@ entries:
     version: 0.1.0
   cert-manager-config:
   - apiVersion: v2
+    appVersion: 0.3.0
+    created: "2022-11-23T12:48:42.102620672Z"
+    description: Create cert-manager configuration (ca-issuer-local, wildcard cluster
+      certificate)
+    digest: cadc386975222c6035e0d06fd60d291d5d2335a5ea86641366bc46563b5bc6bc
+    name: cert-manager-config
+    type: application
+    urls:
+    - https://github.com/cvstebut/cvscharts/releases/download/cert-manager-config-0.3.0/cert-manager-config-0.3.0.tgz
+    version: 0.3.0
+  - apiVersion: v2
     appVersion: 0.2.0
     created: "2022-03-18T09:23:02.16802925Z"
     description: Create cert-manager configuration (ca-issuer-local, wildcard cluster
@@ -215,4 +226,4 @@ entries:
     urls:
     - https://github.com/cvstebut/cvscharts/releases/download/observability-config-0.1.0/observability-config-0.1.0.tgz
     version: 0.1.0
-generated: "2022-11-22T17:46:51.045120312Z"
+generated: "2022-11-23T12:48:42.102670472Z"
