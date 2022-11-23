@@ -12,8 +12,11 @@ clusterissuer:
 #     commonname: '*.k7.infra.namolabs.de'
 #   - name: k8-stable-ingress-certificate
 #     commonname: '*.k7.infra.namolabs.de'
+#     additional_dnsnames:
+#     - "*.ci.namolabs.de"
+#     - "dummy.ci.namolabs.de"
 #   - name: k9-stable-ingress-certificate
-#     commonname: '*.k9.infra.namolabs.de'
+#     commoname: '*.k9.infra.namolabs.de'
 #     namespace: argocd
 
 

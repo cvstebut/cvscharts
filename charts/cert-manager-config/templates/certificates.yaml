@@ -10,6 +10,11 @@ spec:
   commonName: {{ .commonname | quote }}
   dnsNames:
   - {{ .commonname | quote }}
+  {{- if .additional_dnsnames }}
+  {{- range .additional_dnsnames }}
+  - {{ . | quote}}
+  {{- end }}
+  {{- end }}
   issuerRef:
     kind: ClusterIssuer
     name: {{ $clusterissuer.name }}
