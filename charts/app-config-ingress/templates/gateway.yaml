@@ -38,7 +38,7 @@ spec:
       credentialName: {{ .credentialName }}
     hosts:
 {{ toYaml .hosts | indent 4 }}
-{{- if .servers}}
+{{- if .servers }}
 {{ toYaml .servers | indent 2 }}
 {{- end }}
 {{- end}}

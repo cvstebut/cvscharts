@@ -16,4 +16,16 @@ spec:
             host: {{ .destination_fqsn }}
             port:
               number: {{ .port | default 80 }}
-{{- end}}
+{{ if .tcp}}
+  tcp:
+{{- range .tcp }}
+    - match:
+        - port: {{ .match_port }}
+      route:
+        - destination:
+            host: {{ .destination_host }}
+            port:
+              number: {{ .destination_port_number }}
+{{- end }}
+{{- end }}
+{{- end }}
