@@ -53,7 +53,7 @@ questions:
     label: Longhorn Instance Manager Image Repository
     group: "Longhorn Images Settings"
   - variable: image.longhorn.instanceManager.tag
-    default: v3_20221117
+    default: v2_20221123
     description: "Specify Longhorn Instance Manager Image Tag"
     type: string
     label: Longhorn Instance Manager Image Tag
@@ -141,6 +141,18 @@ questions:
     description: "Specify CSI Driver Snapshotter image tag. Leave blank to autodetect."
     type: string
     label: Longhorn CSI Driver Snapshotter Image Tag
+    group: "Longhorn CSI Driver Images"
+  - variable: image.csi.livenessProbe.repository
+    default: longhornio/livenessprobe
+    description: "Specify CSI liveness probe image repository. Leave blank to autodetect."
+    type: string
+    label: Longhorn CSI Liveness Probe Image Repository
+    group: "Longhorn CSI Liveness Probe Images"
+  - variable: image.csi.livenessProbe.tag
+    default: v2.8.0
+    description: "Specify CSI liveness probe image tag. Leave blank to autodetect."
+    type: string
+    label: Longhorn CSI Liveness Probe Image Tag
     group: "Longhorn CSI Driver Images"
 - variable: privateRegistry.registryUrl
   label: Private registry URL
@@ -340,6 +352,17 @@ Disabling **Backupstore Poll Interval** also means to disable failed backup auto
     type: int
     min: 0
     default: 1440
+  - variable: defaultSettings.restoreVolumeRecurringJobs
+		label: Restore Volume Recurring Jobs
+		description: "Restore recurring jobs from the backup volume on the backup target and create recurring jobs if not exist during a backup restoration.
+Longhorn also supports individual volume setting. The setting can be specified on Backup page when making a backup restoration, this overrules the global setting.
+The available volume setting options are:
+- **ignored**. This is the default option that instructs Longhorn to inherit from the global setting.
+- **enabled**. This option instructs Longhorn to restore recurring jobs/groups from the backup target forcibly.
+- **disabled**. This option instructs Longhorn no restoring recurring jobs/groups should be done."
+		group: "Longhorn Default Settings"
+		type: boolean
+		default: "false"
   - variable: defaultSettings.recurringSuccessfulJobsHistoryLimit
     label: Cronjob Successful Jobs History Limit
     description: "This setting specifies how many successful backup or snapshot job histories should be retained. History will not be retained if the value is 0.",
@@ -350,6 +373,15 @@ Disabling **Backupstore Poll Interval** also means to disable failed backup auto
   - variable: defaultSettings.recurringFailedJobsHistoryLimit
     label: Cronjob Failed Jobs History Limit
     description: "This setting specifies how many failed backup or snapshot job histories should be retained. History will not be retained if the value is 0."
+    group: "Longhorn Default Settings"
+    type: int
+    min: 0
+    default: 1
+  - variable: defaultSettings.supportBundleFailedHistoryLimit
+    label: SupportBundle Failed History Limit
+    description: This setting specifies how many failed support bundles can exist in the cluster.
+The retained failed support bundle is for analysis purposes and needs to clean up manually.
+Set this value to **0** to have Longhorn automatically purge all failed support bundles.
     group: "Longhorn Default Settings"
     type: int
     min: 0
@@ -552,7 +584,7 @@ WARNING:
 - variable: defaultSettings.deletingConfirmationFlag
   label: Deleting Confirmation Flag
   description: "This flag is designed to prevent Longhorn from being accidentally uninstalled which will lead to data lost.
-	Set this flag to **true** to allow Longhorn uninstallation. 
+	Set this flag to **true** to allow Longhorn uninstallation.
 	If this flag **false**, Longhorn uninstallation job will fail. "
   group: "Longhorn Default Settings"
   type: boolean
@@ -586,6 +618,15 @@ WARNING:
   group: "Longhorn Default Settings"
   type: string
   default: "0 0 */7 * *"
+- variable: defaultSettings.removeSnapshotsDuringFilesystemTrim
+  label: Remove Snapshots During Filesystem Trim
+  description: "This setting allows Longhorn filesystem trim feature to automatically mark the latest snapshot and its ancestors as removed and stops at the snapshot containing multiple children.\n\n
+    Since Longhorn filesystem trim feature can be applied to the volume head and the followed continuous removed or system snapshots only.\n\n
+    Notice that trying to trim a removed files from a valid snapshot will do nothing but the filesystem will discard this kind of in-memory trimmable file info.\n\n
+    Later on if you mark the snapshot as removed and want to retry the trim, you may need to unmount and remount the filesystem so that the filesystem can recollect the trimmable file info."
+  group: "Longhorn Default Settings"
+  type: boolean
+  default: "false"
 - variable: persistence.defaultClass
   default: "true"
   description: "Set as default StorageClass for Longhorn"
@@ -697,6 +738,16 @@ WARNING:
     group: "Longhorn Storage Class Settings"
     type: string
     default:
+- variable: persistence.removeSnapshotsDuringFilesystemTrim
+  description: "Allow automatically removing snapshots during filesystem trim for Longhorn StorageClass"
+  label: Default Storage Class Remove Snapshots During Filesystem Trim
+  group: "Longhorn Storage Class Settings"
+  type: enum
+  options:
+  - "ignored"
+  - "enabled"
+  - "disabled"
+  default: "ignored"
 - variable: ingress.enabled
   default: "false"
   description: "Expose app using Layer 7 Load Balancer - ingress"

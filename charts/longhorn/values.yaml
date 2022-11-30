@@ -34,13 +34,16 @@ image:
       tag: master-head
     instanceManager:
       repository: longhornio/longhorn-instance-manager
-      tag: v3_20221117
+      tag: v2_20221123
     shareManager:
       repository: longhornio/longhorn-share-manager
       tag: v1_20220914
     backingImageManager:
       repository: longhornio/backing-image-manager
       tag: v3_20220808
+    supportBundleKit:
+      repository: longhornio/support-bundle-kit
+      tag: v0.0.14
   csi:
     attacher:
       repository: longhornio/csi-attacher
@@ -57,6 +60,9 @@ image:
     snapshotter:
       repository: longhornio/csi-snapshotter
       tag: v5.0.1
+    livenessProbe:
+      repository: longhornio/livenessprobe
+      tag: v2.8.0
   pullPolicy: IfNotPresent
 
 service:
@@ -72,6 +78,7 @@ service:
 persistence:
   defaultClass: true
   defaultFsType: ext4
+  defaultMkfsParams: ""
   defaultClassReplicaCount: 3
   defaultDataLocality: disabled # best-effort otherwise
   reclaimPolicy: Delete
@@ -88,6 +95,7 @@ persistence:
   defaultNodeSelector:
     enable: false # disable by default
     selector: []
+  removeSnapshotsDuringFilesystemTrim: ignored # "enabled" or "disabled" otherwise
 
 csi:
   kubeletRootDir: ~
@@ -112,8 +120,10 @@ defaultSettings:
   defaultLonghornStaticStorageClass: ~
   backupstorePollInterval: ~
   failedBackupTTL: ~
+  restoreVolumeRecurringJobs: ~
   recurringSuccessfulJobsHistoryLimit: ~
   recurringFailedJobsHistoryLimit: ~
+  supportBundleFailedHistoryLimit: ~
   taintToleration: ~
   systemManagedComponentsNodeSelector: ~
   priorityClass: ~
@@ -144,6 +154,7 @@ defaultSettings:
   snapshotDataIntegrity: ~
   snapshotDataIntegrityImmediateCheckAfterSnapshotCreation: ~
   snapshotDataIntegrityCronjob: ~
+  removeSnapshotsDuringFilesystemTrim: ~
 privateRegistry:
   createSecret: ~
   registryUrl: ~
