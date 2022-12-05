@@ -1,10 +1,12 @@
+{{- range .Values.projects }}
+---
 apiVersion: argoproj.io/v1alpha1
 kind: AppProject
 metadata:
-  name: ci
-  namespace: argocd
+  name: {{ .name }}
+  namespace: {{ .namespace | default "argocd" }}
 spec:
-  description: cluster wide ci apps
+  description: {{ .description }}
   destinations:
   - namespace: '*'
     server: '*'
@@ -13,3 +15,4 @@ spec:
   clusterResourceWhitelist:
   - group: '*'
     kind: '*'
+{{- end}}
