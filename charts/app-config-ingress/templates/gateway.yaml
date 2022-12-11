@@ -7,7 +7,7 @@ metadata:
   namespace: {{ .namespace | default "istio-ingress" }}
 spec:
   selector:
-    istio: gateway
+    {{ .selector | default "istio: gateway" }}
   servers:
   - port:
       number: 80
